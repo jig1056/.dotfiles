@@ -1,7 +1,7 @@
 echo " " 
-echo "*********************************************"
-echo "✅ Mark Nelson - starting ~/.zprofile " 
-echo "*********************************************"
+echo "*****************************************************"
+echo "✅ Mark Nelson - starting ${(%):-%N}"   # $0 is the script name" 
+echo "*****************************************************"
 
 #My custom script
 #. /Volumes/Data/Users/Mark/Scripting/config/setmyenv.sh
@@ -20,7 +20,7 @@ export PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo " " 
-echo "*********************************************"
-echo "✅ Mark Nelson - ~/.zprofile Completed" 
+echo "*****************************************************"
+echo "✅ Mark Nelson - ${(%):-%N} Completed" # $0 is the script name
 echo "~/.zshrc runs next" 
-echo "*********************************************"
+echo "*****************************************************"

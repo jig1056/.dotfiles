@@ -72,7 +72,6 @@ export PATH="$SCRIPTDIR/commands:/usr/local/php5/bin:$PATH"
 
 # ---- Completion message ----
 echo " " 
-echo "*********************************************"
-echo "✅ Mark Nelson - ~/.setmyenv.sh Completed" 
-echo "*********************************************"
-
+echo "*****************************************************"
+echo "✅ Mark Nelson - ${(%):-%N} Completed"  # $0 is the script name
+echo "*****************************************************"
