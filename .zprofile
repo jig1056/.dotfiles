@@ -1,5 +1,11 @@
+echo " " 
+echo "*********************************************"
+echo "✅ Mark Nelson - starting ~/.zprofile " 
+echo "*********************************************"
+
 #My custom script
-. /Volumes/Data/Users/Mark/Scripting/config/setmyenv.sh
+#. /Volumes/Data/Users/Mark/Scripting/config/setmyenv.sh
+source ~/.setmyenv.sh 
 
 # Setting PATH for Python 3.10
 # The original version is saved in .zprofile.pysave
@@ -12,3 +18,9 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
 export PATH
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+echo " " 
+echo "*********************************************"
+echo "✅ Mark Nelson - ~/.zprofile Completed" 
+echo "~/.zshrc runs next" 
+echo "*********************************************"

@@ -38,12 +38,12 @@ alias python=python3                  # Use Python 3 by default
 alias prp='pipenv run python'         # Run Python inside Pipenv environment
 
 # ---- Quick directory navigation ----
-alias cdtemp='cd /Volumes/Data/Users/Mark/temp'
-alias cdremp='cd /Volumes/Data/Users/Mark/remp'
+alias cdtemp='cd $HOMEDIR/temp'
+alias cdremp='cd $HOMEDIR/remp'
 alias cdhome='cd $HOMEDIR'
 alias cdscript='cd $SCRIPTDIR'
 alias cdlogs='cd $LOGDIR'
-alias cdvenv='cd /Users/mark/.local/share/virtualenvs'
+alias cdvenv='cd $HOMEDIR/.local/share/virtualenvs'
 
 # ---- System monitoring / troubleshooting ----
 alias sleepless="pmset -g assertions | egrep '(PreventUserIdleSystemSleep|PreventUserIdleDisplaySleep)'"
@@ -59,7 +59,9 @@ alias cd='z'   # Override cd with z (zoxide or autojump assumed)
 
 # ---- Miscellaneous ----
 alias size='du -sh'   # Show human-readable directory size
-#alias srca            # (⚠️ Empty alias - does nothing currently)
+alias srcall='source ~/.zprofile' 
+alias srcenv='source ~/.setmyenv.sh'
+alias ftsb='echo ftsb'
 
 # ---- Custom prompt (commented out) ----
 # PS1='[\h:$PWD] >'
@@ -69,4 +71,8 @@ alias size='du -sh'   # Show human-readable directory size
 export PATH="$SCRIPTDIR/commands:/usr/local/php5/bin:$PATH"
 
 # ---- Completion message ----
-echo "✅ Mark Nelson - Environment Script Completed"
+echo " " 
+echo "*********************************************"
+echo "✅ Mark Nelson - ~/.setmyenv.sh Completed" 
+echo "*********************************************"
+
