@@ -10,7 +10,7 @@ case "$HOSTNAME" in
   MarksMacStudio2)
     export HOMEDIR="/Volumes/Data/Users/Mark"
     ;;
-  MarkMacBook)
+  MacBook-Air-15)
     export HOMEDIR="/Users/mark"
     ;;
   *)
