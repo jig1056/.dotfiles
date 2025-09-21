@@ -1,0 +1,72 @@
+###############################################
+# Mark Nelson - Environment Setup Script
+# Configures environment variables, paths, and aliases
+###############################################
+
+# ---- Detect hostname and set HOMEDIR accordingly ----
+HOSTNAME=$(hostname -s)  # Get short hostname (without domain)
+
+case "$HOSTNAME" in
+  MarksMacStudio2)
+    export HOMEDIR="/Volumes/Data/Users/Mark"
+    ;;
+  MarkMacBook)
+    export HOMEDIR="/Users/mark"
+    ;;
+  *)
+    echo "⚠️ Error: HOMEDIR is not set for host $HOSTNAME"
+    unset HOMEDIR
+    ;;
+esac
+
+# ---- Directories ----
+SCRIPTDIR="$HOMEDIR/Scripting"        # Scripts and utilities directory
+LOGDIR="$HOMEDIR/temp/logs"           # Logs directory
+
+# ---- Command paths ----
+WOLCMD="$SCRIPTDIR/commands/wolcmd"
+iperf3="$SCRIPTDIR/commands/iperf3"
+
+# ---- File listing aliases ----
+alias lshead='ls -lt | head -20'        # Show 20 most recent files
+alias lsld='ls -l | grep "^d"'          # List only directories
+alias lsd='ls -d */'                    # Show directories only (short form)
+alias lsh='ls -ld .?*'                  # Show hidden files/dirs (excluding . and ..)
+
+# ---- Python / Pipenv ----
+alias python=python3                  # Use Python 3 by default
+alias prp='pipenv run python'         # Run Python inside Pipenv environment
+
+# ---- Quick directory navigation ----
+alias cdtemp='cd /Volumes/Data/Users/Mark/temp'
+alias cdremp='cd /Volumes/Data/Users/Mark/remp'
+alias cdhome='cd $HOMEDIR'
+alias cdscript='cd $SCRIPTDIR'
+alias cdlogs='cd $LOGDIR'
+alias cdvenv='cd /Users/mark/.local/share/virtualenvs'
+
+# ---- System monitoring / troubleshooting ----
+alias sleepless="pmset -g assertions | egrep '(PreventUserIdleSystemSleep|PreventUserIdleDisplaySleep)'"
+alias systime="last reboot | head -2; last shutdown | head -2; uptime"
+alias sleeptime="pmset -g log | grep -e ' Sleep  ' -e ' Wake  '"
+alias flushdns="sudo killall -HUP mDNSResponder && sudo dscacheutil -flushcache"
+
+# ---- Directory shortcuts ----
+alias b.='cd ..'
+alias b..='cd ../..'
+alias b...='cd ../../..'
+alias cd='z'   # Override cd with z (zoxide or autojump assumed)
+
+# ---- Miscellaneous ----
+alias size='du -sh'   # Show human-readable directory size
+#alias srca            # (⚠️ Empty alias - does nothing currently)
+
+# ---- Custom prompt (commented out) ----
+# PS1='[\h:$PWD] >'
+# export PS1="%d %% "
+
+# ---- PATH ----
+export PATH="$SCRIPTDIR/commands:/usr/local/php5/bin:$PATH"
+
+# ---- Completion message ----
+echo "✅ Mark Nelson - Environment Script Completed"
