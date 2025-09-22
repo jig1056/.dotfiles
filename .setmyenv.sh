@@ -44,6 +44,7 @@ alias cdhome='cd $HOMEDIR'
 alias cdscript='cd $SCRIPTDIR'
 alias cdlogs='cd $LOGDIR'
 alias cdvenv='cd $HOMEDIR/.local/share/virtualenvs'
+alias cddot='~/.dotfiles'
 
 # ---- System monitoring / troubleshooting ----
 alias sleepless="pmset -g assertions | egrep '(PreventUserIdleSystemSleep|PreventUserIdleDisplaySleep)'"
@@ -56,6 +57,7 @@ alias b.='cd ..'
 alias b..='cd ../..'
 alias b...='cd ../../..'
 alias cd='z'   # Override cd with z (zoxide or autojump assumed)
+
 
 # ---- Miscellaneous ----
 alias size='du -sh'   # Show human-readable directory size
