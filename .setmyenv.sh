@@ -3,6 +3,7 @@
 # Configures environment variables, paths, and aliases
 # 09/20/2025 - Inital version
 # 09/27/2025 - Chagned code use the ~/.localvars.sh to sent home directory
+# the process will exit if the ~/.localvars.sh file is not found
 ############################################################################
 
 # ---- Detect hostname and set HOMEDIR accordingly ----
@@ -16,6 +17,7 @@ else
     echo "❌ ❌ ❌ CD to the direcotry you want to be your home direct" >&2
     echo "⚠️ Run the following command ---> echo \"export HOMEDIR=\\\"\$(pwd)\\\"\" >> ~/.localvars.sh" >&2 
     unset HOMEDIR
+    return 1  # Exit the script with an error code
 fi
 
 # ---- Directories ----

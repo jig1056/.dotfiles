@@ -1,3 +1,8 @@
+############################################################################
+# Mark Nelson - .zprofile
+# 09/27/2025 - Updated script to exit if .setmyenv.sh fails
+############################################################################
+
 echo " " 
 echo "*****************************************************"
 echo "✅ Mark Nelson - starting ${(%):-%N}"   # $0 is the script name" 
@@ -5,7 +10,11 @@ echo "*****************************************************"
 
 #My custom script
 #. /Volumes/Data/Users/Mark/Scripting/config/setmyenv.sh
-source ~/.setmyenv.sh 
+if source ~/.setmyenv.sh; then 
+    #just continue
+else 
+    return 1 # Exit if there was an error in the .setmyenv.sh script
+fi
 
 # Setting PATH for Python 3.10
 # The original version is saved in .zprofile.pysave
