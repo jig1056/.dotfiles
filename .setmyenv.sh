@@ -63,7 +63,6 @@ alias cd='z'   # Override cd with z (zoxide or autojump assumed)
 alias size='du -sh'   # Show human-readable directory size
 alias srcall='source ~/.zprofile' 
 alias srcenv='source ~/.setmyenv.sh'
-alias ftsb='echo ftsb'
 
 # ---- Custom prompt (commented out) ----
 # PS1='[\h:$PWD] >'
