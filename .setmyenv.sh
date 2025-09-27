@@ -1,23 +1,22 @@
-###############################################
+############################################################################
 # Mark Nelson - Environment Setup Script
 # Configures environment variables, paths, and aliases
-###############################################
+# 09/20/2025 - Inital version
+# 09/27/2025 - Chagned code use the ~/.localvars.sh to sent home directory
+############################################################################
 
 # ---- Detect hostname and set HOMEDIR accordingly ----
 HOSTNAME=$(hostname -s)  # Get short hostname (without domain)
 
-case "$HOSTNAME" in
-  MarksMacStudio2)
-    export HOMEDIR="/Volumes/Data/Users/Mark"
-    ;;
-  MacBook-Air-15)
-    export HOMEDIR="/Users/mark"
-    ;;
-  *)
-    echo "⚠️ Error: HOMEDIR is not set for host $HOSTNAME"
+if [[ -f ~/.localvars.sh ]]; then
+    source ~/.localvars.sh
+else
+    echo "❌ ❌ ❌ Error: ~/.localvars.sh not found!" >&2
+    echo "❌ ❌ ❌ HOMEDIR not set!" >&2
+    echo "❌ ❌ ❌ CD to the direcotry you want to be your home direct" >&2
+    echo "⚠️ Run the following command ---> echo \"export HOMEDIR=\\\"\$(pwd)\\\"\" >> ~/.localvars.sh" >&2 
     unset HOMEDIR
-    ;;
-esac
+fi
 
 # ---- Directories ----
 SCRIPTDIR="$HOMEDIR/Scripting"        # Scripts and utilities directory

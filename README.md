@@ -24,8 +24,15 @@ Manage your dotfiles easily and cleanly using [GNU Stow](https://www.gnu.org/sof
 That’s it! 🎉 Your dotfiles are now symlinked into place.
 
 ---
+### Setup and export $HOMEDIR
 
-## 🛠 Manual Setup (Optional)
+This is will create the ~/.localvars.sh and include HOMEDIR.  Make sure you are in the directory you want to be your $HOMEDIR
+```bash
+echo "export HOMEDIR=\"$(pwd)\"" >> ~/.localvars.sh
+```
+---
+
+## 🛠 Manual Setup 
 
 If you’re migrating from an existing setup, follow these steps to back up and prepare.
 
