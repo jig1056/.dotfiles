@@ -4,6 +4,7 @@
 # 09/20/2025 - Inital version
 # 09/27/2025 - Chagned code use the ~/.localvars.sh to sent home directory
 # the process will exit if the ~/.localvars.sh file is not found
+# 09/28/2025 - Updated the srcall alias to omz reload and plugins setup
 ############################################################################
 
 # ---- Detect hostname and set HOMEDIR accordingly ----
@@ -62,7 +63,7 @@ alias cd='z'   # Override cd with z (zoxide or autojump assumed)
 
 # ---- Miscellaneous ----
 alias size='du -sh'   # Show human-readable directory size
-alias srcall='source ~/.zprofile' 
+alias srcall='omz reload'  # Reload Oh My Zsh configuration 
 alias srcenv='source ~/.setmyenv.sh'
 alias psg='ps aux | grep -i '  # Case-insensitive process search
 alias c='clear'                 # Clear terminal screen
@@ -79,6 +80,12 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 else
     alias myip='echo "Unknown OS: cannot determine IP command"'
 fi
+
+# ---- Plugins Setup ----
+# zsh-history-substring-search configuration
+bindkey '^[[A' history-substring-search-up # or '\eOA'
+bindkey '^[[B' history-substring-search-down # or '\eOB'
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1 # Ensure unique matches
 
 # ---- PATH ----
 export PATH="$SCRIPTDIR/commands:/usr/local/php5/bin:$PATH"
