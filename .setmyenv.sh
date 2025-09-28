@@ -64,10 +64,21 @@ alias cd='z'   # Override cd with z (zoxide or autojump assumed)
 alias size='du -sh'   # Show human-readable directory size
 alias srcall='source ~/.zprofile' 
 alias srcenv='source ~/.setmyenv.sh'
+alias psg='ps aux | grep -i '  # Case-insensitive process search
+alias c='clear'                 # Clear terminal screen
+alias h='history'               # Show command history
+alias v='vim'                   # Use vim editor
+alias vi='vim'                  # Use vim editor
+alias path='echo -e ${PATH//:/\\n}'  # Display PATH variable line by line
+alias p5='ping -c 5'          # Ping with 5 packets by default
 
-# ---- Custom prompt (commented out) ----
-# PS1='[\h:$PWD] >'
-# export PS1="%d %% "
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias myip='ipconfig getifaddr en0'
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    alias myip="hostname -I | awk '{print \$1}'"
+else
+    alias myip='echo "Unknown OS: cannot determine IP command"'
+fi
 
 # ---- PATH ----
 export PATH="$SCRIPTDIR/commands:/usr/local/php5/bin:$PATH"
