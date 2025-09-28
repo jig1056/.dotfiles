@@ -91,7 +91,7 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1 # Ensure unique matches
 export PATH="$SCRIPTDIR/commands:/usr/local/php5/bin:$PATH"
 
 # ---- Completion message ----
-echo " " 
-echo "*****************************************************"
+#echo " " 
+#echo "*****************************************************"
 echo "✅ Mark Nelson - ${(%):-%N} Completed"  # $0 is the script name
-echo "*****************************************************"
+#echo "*****************************************************"
