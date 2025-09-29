@@ -72,6 +72,7 @@ alias v='vim'                   # Use vim editor
 alias vi='vim'                  # Use vim editor
 alias path='echo -e ${PATH//:/\\n}'  # Display PATH variable line by line
 alias p5='ping -c 5'          # Ping with 5 packets by default
+alias cpp='copypath'        # Copy current directory path to clipboard
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     alias myip='ipconfig getifaddr en0'
