@@ -47,6 +47,7 @@ alias cdscript='cd $SCRIPTDIR'
 alias cdlogs='cd $LOGDIR'
 alias cdvenv='cd $HOMEDIR/.local/share/virtualenvs'
 alias cddot='~/.dotfiles'
+alias cpp='copypath'
 
 # ---- System monitoring / troubleshooting ----
 alias sleepless="pmset -g assertions | egrep '(PreventUserIdleSystemSleep|PreventUserIdleDisplaySleep)'"
