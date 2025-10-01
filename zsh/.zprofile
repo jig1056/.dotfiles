@@ -1,6 +1,7 @@
 ############################################################################
 # Mark Nelson - .zprofile
 # 09/27/2025 - Updated script to exit if .setmyenv.sh fails
+# 09/30/2025 - Add if statement to check for darwin OS type before running brew shellenv
 ############################################################################
 
 #echo " " 
