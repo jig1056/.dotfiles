@@ -3,10 +3,10 @@
 # 09/27/2025 - Updated script to exit if .setmyenv.sh fails
 ############################################################################
 
-echo " " 
+#echo " " 
 echo "*****************************************************"
 echo "✅ Mark Nelson - starting ${(%):-%N}"   # $0 is the script name" 
-echo "*****************************************************"
+#echo "*****************************************************"
 
 #My custom script
 #. /Volumes/Data/Users/Mark/Scripting/config/setmyenv.sh
@@ -28,8 +28,8 @@ export PATH
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-echo " " 
-echo "*****************************************************"
-echo "✅ Mark Nelson - ${(%):-%N} Completed" # $0 is the script name
-echo "~/.zshrc runs next" 
+#echo " " 
+#echo "*****************************************************"
+echo "✅ Mark Nelson - ${(%):-%N} Completed. ~/.zshrc runs next"  # $0 is the script name
+#echo "~/.zshrc runs next" 
 echo "*****************************************************"
