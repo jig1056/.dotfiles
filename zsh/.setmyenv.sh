@@ -59,7 +59,7 @@ alias flushdns="sudo killall -HUP mDNSResponder && sudo dscacheutil -flushcache"
 alias b.='cd ..'
 alias b..='cd ../..'
 alias b...='cd ../../..'
-alias cd='z'   # Override cd with z (zoxide or autojump assumed)
+#alias cd='z'   # Override cd with z (zoxide or autojump assumed)
 
 
 # ---- Miscellaneous ----
