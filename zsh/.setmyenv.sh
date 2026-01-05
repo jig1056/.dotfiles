@@ -5,6 +5,7 @@
 # 09/27/2025 - Chagned code use the ~/.localvars.sh to sent home directory
 # the process will exit if the ~/.localvars.sh file is not found
 # 09/28/2025 - Updated the srcall alias to omz reload and plugins setup
+# 01/05/2026 - Added a few more aliases and comments
 ############################################################################
 
 # ---- Detect hostname and set HOMEDIR accordingly ----
@@ -30,10 +31,17 @@ WOLCMD="$SCRIPTDIR/commands/wolcmd"
 iperf3="$SCRIPTDIR/commands/iperf3"
 
 # ---- File listing aliases ----
+alias ls='ls --color=auto'              # Enable colorized output
 alias lshead='ls -lt | head -20'        # Show 20 most recent files
-alias lsld='ls -l | grep "^d"'          # List only directories
+#alias lsld='ls -l | grep "^d"'         # List only directories
+alias lsld='ls -ld *'                   # Long listing of directories only 
 alias lsd='ls -d */'                    # Show directories only (short form)
 alias lsh='ls -ld .?*'                  # Show hidden files/dirs (excluding . and ..)
+alias ll='ls -alFh'                     # Long listing with human-readable sizes
+alias la='ls -A'                        # List all files except . and ..
+alias l='ls -CF'                        # Columnar listing  
+alias lsla='ls -alF'                    # Long listing of all files with type indicators
+
 
 # ---- Python / Pipenv ----
 alias python=python3                  # Use Python 3 by default
