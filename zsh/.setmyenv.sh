@@ -41,6 +41,7 @@ alias ll='ls -alFh'                     # Long listing with human-readable sizes
 alias la='ls -A'                        # List all files except . and ..
 alias l='ls -CF'                        # Columnar listing  
 alias lsla='ls -alF'                    # Long listing of all files with type indicators
+alias aliasg='alias|grep'               # Grep alias
 
 
 # ---- Python / Pipenv ----
