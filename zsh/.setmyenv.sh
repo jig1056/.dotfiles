@@ -84,6 +84,10 @@ alias path='echo -e ${PATH//:/\\n}'  # Display PATH variable line by line
 alias p5='ping -c 5'          # Ping with 5 packets by default
 alias cpp='copypath'        # Copy current directory path to clipboard
 
+#Docker aliases
+alias dps='{ echo -e "CONTAINER_ID\tNAME\tIMAGE\tSTATUS"; docker ps --format "{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"; } | column -t
+'
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     alias myip='ipconfig getifaddr en0'
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
