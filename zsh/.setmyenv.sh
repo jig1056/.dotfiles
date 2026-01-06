@@ -33,15 +33,15 @@ iperf3="$SCRIPTDIR/commands/iperf3"
 # ---- File listing aliases ----
 alias ls='ls --color=auto'              # Enable colorized output
 alias lshead='ls -lt | head -20'        # Show 20 most recent files
-#alias lsld='ls -l | grep "^d"'         # List only directories
-alias lsld='ls -ld *'                   # Long listing of directories only 
+alias lsld='ls -l | grep "^d"'         # List only directories
+#alias lsld='ls -ld *'                   # Long listing of directories only 
 alias lsd='ls -d */'                    # Show directories only (short form)
 alias lsh='ls -ld .?*'                  # Show hidden files/dirs (excluding . and ..)
 alias ll='ls -alFh'                     # Long listing with human-readable sizes
 alias la='ls -A'                        # List all files except . and ..
 alias l='ls -CF'                        # Columnar listing  
 alias lsla='ls -alF'                    # Long listing of all files with type indicators
-alias aliasg='alias|grep'               # Grep alias
+alias ag='alias|grep'                   # Grep alias
 
 
 # ---- Python / Pipenv ----
