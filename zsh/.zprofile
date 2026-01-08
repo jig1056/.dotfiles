@@ -2,7 +2,6 @@
 # Mark Nelson - .zprofile
 # 09/27/2025 - Updated script to exit if .setmyenv.sh fails
 # 09/30/2025 - Add if statement to check for darwin OS type before running brew shellenv
-# 01/07/2026 - Added legacy customSetEnv.sh sourcing
 ############################################################################
 
 #echo " " 
@@ -10,20 +9,13 @@ echo "*****************************************************"
 echo "✅ Mark Nelson - starting ${(%):-%N}"   # $0 is the script name" 
 #echo "*****************************************************"
 
-
-
-#Check if my legecy customSetEnv.sh file exists, and source it if it does
-[[ -f ~/mylib/customSetEnv.sh ]] && source ~/mylib/customSetEnv.sh
-
+#My custom script
 #. /Volumes/Data/Users/Mark/Scripting/config/setmyenv.sh
-# Source the .setmyenv.sh script and handle errors
 if source ~/.setmyenv.sh; then 
     #just continue
 else 
     return 1 # Exit if there was an error in the .setmyenv.sh script
 fi
-
-
 
 # Setting PATH for Python 3.10
 # The original version is saved in .zprofile.pysave
