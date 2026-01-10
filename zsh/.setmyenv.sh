@@ -6,6 +6,7 @@
 # the process will exit if the ~/.localvars.sh file is not found
 # 09/28/2025 - Updated the srcall alias to omz reload and plugins setup
 # 01/05/2026 - Added a few more aliases and comments
+# 01/10/2026 - Added alias to help with git support 
 ############################################################################
 
 # ---- Detect hostname and set HOMEDIR accordingly ----
