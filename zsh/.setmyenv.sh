@@ -75,6 +75,7 @@ alias b...='cd ../../..'
 alias size='du -sh'   # Show human-readable directory size
 alias srcall='omz reload'  # Reload Oh My Zsh configuration 
 alias srcenv='source ~/.setmyenv.sh'
+alias reloadshell='source ~/.zprofile'
 alias psg='ps aux | grep -i '  # Case-insensitive process search
 alias c='clear'                 # Clear terminal screen
 alias h='history'               # Show command history
@@ -95,6 +96,16 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 else
     alias myip='echo "Unknown OS: cannot determine IP command"'
 fi
+
+# -----git aliais
+alias gs='git status'
+alias gfa='git fetch -all'
+alias gpo='git pull origin main'
+alias glog="git log --graph --all --decorate --date=short --pretty=format:'%C(auto)%h %C(bold blue)%ad%C(reset) %C(yellow)%d %C(reset)%s'"
+alias gmissing='git log --graph --decorate --date=short --pretty=format:"%C(auto)%h %C(bold blue)%ad %C(yellow)%d %C(reset)%s" HEAD..origin/main'   
+alias gdifffiles='git diff --name-only HEAD..origin/main'
+alias gdiff='git show HEAD..origin/main'
+
 
 # ---- Plugins Setup ----
 # zsh-history-substring-search configuration
