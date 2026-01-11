@@ -100,7 +100,7 @@ fi
 
 # -----git aliais
 alias gs='git status'
-alias gfa='git fetch -all'
+alias gfa='git fetch --all'
 alias gpo='git pull origin main'
 alias glog="git log --graph --all --decorate --date=short --pretty=format:'%C(auto)%h %C(bold blue)%ad%C(reset) %C(yellow)%d %C(reset)%s'"
 alias gmissing='git log --graph --decorate --date=short --pretty=format:"%C(auto)%h %C(bold blue)%ad %C(yellow)%d %C(reset)%s" HEAD..origin/main'   
