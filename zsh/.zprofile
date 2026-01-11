@@ -3,6 +3,7 @@
 # 09/27/2025 - Updated script to exit if .setmyenv.sh fails
 # 09/30/2025 - Add if statement to check for darwin OS type before running brew shellenv
 # 01/07/2026 - Added legacy customSetEnv.sh sourcing
+# 01/10/2026 - Add $HOME/.local/bin to PATH
 ############################################################################
 
 #echo " " 
@@ -30,6 +31,8 @@ export PATH
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
 export PATH
+
+export PATH="$HOME/.local/bin:$PATH"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then    
     eval "$(/opt/homebrew/bin/brew shellenv)"
