@@ -7,6 +7,7 @@
 # 09/28/2025 - Updated the srcall alias to omz reload and plugins setup
 # 01/05/2026 - Added a few more aliases and comments
 # 01/10/2026 - Added alias to help with git support 
+# 01/12/2026 - Added more git aliases 
 ############################################################################
 
 # ---- Detect hostname and set HOMEDIR accordingly ----
@@ -44,6 +45,7 @@ alias l='ls -CF'                        # Columnar listing
 alias lsla='ls -alF'                    # Long listing of all files with type indicators
 alias ag='alias|grep'                   # Grep alias
 
+alias mydns="resolvectl status |egrep -iE 'DNS Server|DNS Domain'"
 
 # ---- Python / Pipenv ----
 alias python=python3                  # Use Python 3 by default
@@ -101,7 +103,12 @@ fi
 # -----git aliais
 alias gs='git status'
 alias gfa='git fetch --all'
-alias gpo='git pull origin main'
+alias gpull='git pull origin main'
+
+alias gadd='git add .'
+alias gcommit='git commit -m'
+alias gpush='git push'
+
 alias glog="git log --graph --all --decorate --date=short --pretty=format:'%C(auto)%h %C(bold blue)%ad%C(reset) %C(yellow)%d %C(reset)%s'"
 alias gmissing='git log --graph --decorate --date=short --pretty=format:"%C(auto)%h %C(bold blue)%ad %C(yellow)%d %C(reset)%s" HEAD..origin/main'   
 alias gdifffiles='git diff --name-only HEAD..origin/main'
