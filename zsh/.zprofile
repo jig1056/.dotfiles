@@ -5,7 +5,7 @@
 # 01/07/2026 - Added legacy customSetEnv.sh sourcing
 # 01/10/2026 - Add $HOME/.local/bin to PATH
 # 01/15/2026 - Add new strucure to source env_core, env_aliases, env_docker, env_git
-# 01/16/2026 - Made ENV_SCRIPTS_DIR dynamic based on OS type
+# 01/16/2026 - Made $SHARED_SHELL_DIR dynamic based on OS type
 ############################################################################
 
 #echo " " 
@@ -24,16 +24,16 @@ echo "✅ Mark Nelson - starting ${(%):-%N}"   # $0 is the script name"
 #     return 1 # Exit if there was an error in the .setmyenv.sh script
 # fi
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    ENV_SCRIPTS_DIR=~/shell/linux_environment
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    ENV_SCRIPTS_DIR=~/shell/shared_shell_scripts/linux_environment
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then    
+    export SHARED_SHELL_DIR=~/shell
+elif [[ "$OSTYPE" == "darwin"* ]]; then    
+    export SHARED_SHELL_DIR=~/shell/shared_shell_scripts
 fi
 
-source $ENV_SCRIPTS_DIR/env_core.sh
-source $ENV_SCRIPTS_DIR/env_aliases.sh
-source $ENV_SCRIPTS_DIR/env_docker.sh
-source $ENV_SCRIPTS_DIR/env_git.sh
+source $SHARED_SHELL_DIR/linux_environment/env_core.sh
+source $SHARED_SHELL_DIR/linux_environment/env_aliases.sh
+source $SHARED_SHELL_DIR/linux_environment/env_docker.sh
+source $SHARED_SHELL_DIR/linux_environment/env_git.sh
 
 # Setting PATH for Python 3.10
 # The original version is saved in .zprofile.pysave
