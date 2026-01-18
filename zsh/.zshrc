@@ -34,8 +34,5 @@ unsetopt prompt_sp
 # zstyle ':completion:*' menu select
 # zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-#This is for  Ghosty
-#export TERM=xterm-256color
-
 # Prompt for absolute paths (your style)
-PROMPT='%F{cyan}%~%f ❯ '
+#PROMPT='%F{cyan}%~%f ❯ '

@@ -24,34 +24,22 @@ echo "✅ Mark Nelson - starting ${(%):-%N}"   # $0 is the script name"
 #     return 1 # Exit if there was an error in the .setmyenv.sh script
 # fi
 
+# -------------------------------------------------------------------------
+# Host-based directory configuration
+# -------------------------------------------------------------------------
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then    
     export SHARED_SHELL_DIR=~/shell
 elif [[ "$OSTYPE" == "darwin"* ]]; then    
     export SHARED_SHELL_DIR=~/shell/shared_shell_scripts
+    eval "$(/opt/homebrew/bin/brew shellenv)"                        # Initialize Homebrew environment
+
 fi
 
 source $SHARED_SHELL_DIR/linux_environment/env_core.sh
 source $SHARED_SHELL_DIR/linux_environment/env_aliases.sh
 source $SHARED_SHELL_DIR/linux_environment/env_docker.sh
 source $SHARED_SHELL_DIR/linux_environment/env_git.sh
-
-# Setting PATH for Python 3.10
-# The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
-export PATH
-
-# Setting PATH for Python 3.11
-# The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
-export PATH
-
-PATH="$HOME/scripts:$PATH"   
-PATH="$HOME/scripts/shared_shell_scripts/general:$PATH"   
-export PATH
-
-if [[ "$OSTYPE" == "darwin"* ]]; then    
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+      
 
 #echo " " 
 #echo "*****************************************************"
