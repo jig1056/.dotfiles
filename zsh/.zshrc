@@ -36,3 +36,6 @@ unsetopt prompt_sp
 
 # Prompt for absolute paths (your style)
 #PROMPT='%F{cyan}%~%f ❯ '
+
+# Added by Antigravity IDE
+export PATH="/Users/mark/.antigravity-ide/antigravity-ide/bin:$PATH"

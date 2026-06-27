@@ -6,6 +6,7 @@
 # 01/10/2026 - Add $HOME/.local/bin to PATH
 # 01/15/2026 - Add new strucure to source env_core, env_aliases, env_docker, env_git
 # 01/16/2026 - Made $SHARED_SHELL_DIR dynamic based on OS type
+# 06/23/2026 - Added the env_functions.sh file 
 ############################################################################
 
 #echo " " 
@@ -39,7 +40,7 @@ source $SHARED_SHELL_DIR/linux_environment/env_core.sh
 source $SHARED_SHELL_DIR/linux_environment/env_aliases.sh
 source $SHARED_SHELL_DIR/linux_environment/env_docker.sh
 source $SHARED_SHELL_DIR/linux_environment/env_git.sh
-      
+source $SHARED_SHELL_DIR/linux_environment/env_functions.sh      
 
 #echo " " 
 #echo "*****************************************************"
